@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.jsteam.databinding.FragmentProfileSectionBinding;
 
+/**
+ * @author kareltan
+ */
 public class ProfileSectionFragment extends Fragment {
 
     private FragmentProfileSectionBinding binding;

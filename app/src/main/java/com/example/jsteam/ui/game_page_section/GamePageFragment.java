@@ -15,6 +15,9 @@ import com.example.jsteam.model.Game;
 
 import java.util.Vector;
 
+/**
+ * @author kareltan
+ */
 public class GamePageFragment extends Fragment {
 
     private FragmentGamePageBinding binding;

@@ -14,6 +14,9 @@ import com.example.jsteam.model.DatabaseConfiguration;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @author kareltan
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     @Override

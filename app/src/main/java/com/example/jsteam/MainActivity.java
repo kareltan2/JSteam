@@ -71,11 +71,13 @@ public class MainActivity extends AppCompatActivity {
         if(index.get() != -1){
             if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
-            }
-            else {
+                return false;
+            } else {
                 Toast.makeText(MainActivity.this, "Successfully Login!", Toast.LENGTH_SHORT).show();
                 Intent intentHome = new Intent(MainActivity.this, HomePageActivity.class);
+                intentHome.putExtra("username", DatabaseConfiguration.users.get(index.intValue()).getUsername());
                 startActivity(intentHome);
+                return true;
             }
         }
 

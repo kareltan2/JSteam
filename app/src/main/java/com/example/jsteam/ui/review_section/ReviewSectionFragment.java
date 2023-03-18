@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.jsteam.databinding.FragmentReviewSectionBinding;
 
+/**
+ * @author kareltan
+ */
 public class ReviewSectionFragment extends Fragment {
 
     private FragmentReviewSectionBinding binding;

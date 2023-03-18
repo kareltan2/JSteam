@@ -2,17 +2,7 @@ package com.example.jsteam;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import com.example.jsteam.Adapter.GamePageAdapter;
-import com.example.jsteam.databinding.ActivityHomePageBinding;
-import com.example.jsteam.model.DatabaseConfiguration;
-import com.example.jsteam.model.Game;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,9 +11,18 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.Adapter.GamePageAdapter;
+import com.example.jsteam.databinding.ActivityHomePageBinding;
+import com.example.jsteam.model.DatabaseConfiguration;
+import com.example.jsteam.model.Game;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.Vector;
 
-
+/**
+ * @author kareltan
+ */
 public class HomePageActivity extends AppCompatActivity {
 
     private ActivityHomePageBinding binding;
@@ -67,6 +66,12 @@ public class HomePageActivity extends AppCompatActivity {
 //            Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
 //            startActivity(intent);
 //        });
+
+        profileSection.setOnClickListener(view -> {
+            Intent intent = new Intent(HomePageActivity.this, ProfilePageActivity.class);
+            intent.putExtra("username", getIntent().getStringExtra("username"));
+            startActivity(intent);
+        });
 
     }
 
