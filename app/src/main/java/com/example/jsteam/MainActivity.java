@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
             String username = String.valueOf(usernameLoginPage.getText());
             String password = String.valueOf(passwordLoginPage.getText());
 
-            validationNotEmpty(username, password);
-            index.set(DatabaseConfiguration.findIndexUser(username));
-            validationAccount(index, password);
+            if(validationNotEmpty(username, password)){
+                index.set(DatabaseConfiguration.findIndexUser(username));
+                validationAccount(index, password);
+            }
+
         });
 
         notHaveAccountText.setOnClickListener(view -> {
@@ -57,13 +59,15 @@ public class MainActivity extends AppCompatActivity {
         DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
     }
 
-    private void validationNotEmpty(String username, String password) {
+    private boolean validationNotEmpty(String username, String password) {
         if(username.isEmpty() || password.isEmpty()){
             Toast.makeText(MainActivity.this, "Email or password cannot be empty!", Toast.LENGTH_SHORT).show();
+            return false;
         }
+        return true;
     }
 
-    private void validationAccount(AtomicInteger index, String password) {
+    private boolean validationAccount(AtomicInteger index, String password) {
         if(index.get() != -1){
             if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
@@ -73,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentHome = new Intent(MainActivity.this, HomePageActivity.class);
                 startActivity(intentHome);
             }
-        } else {
-            Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
         }
+
+        Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
+        return false;
     }
 
 }

@@ -29,7 +29,7 @@ public class DatabaseConfiguration {
         reviews.add(review);
     }
 
-    public static int findIndexUser(String username){
+    public static Integer findIndexUser(String username){
         int index = -1;
 
         for (int i = 0 ; i < DatabaseConfiguration.users.size() ; i++){
