@@ -62,6 +62,7 @@ public class HomePageActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //TODO: create review activity
 //        reviewSectionButton.setOnClickListener(view -> {
 //            Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
 //            startActivity(intent);
