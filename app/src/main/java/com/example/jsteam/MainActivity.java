@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
             String username = String.valueOf(usernameLoginPage.getText());
             String password = String.valueOf(passwordLoginPage.getText());
 
-            validationNotEmpty(username, password);
-            index.set(DatabaseConfiguration.findIndexUser(username));
-            validationAccount(index, password);
+            if(validationNotEmpty(username, password)){
+                index.set(DatabaseConfiguration.findIndexUser(username));
+                validationAccount(index, password);
+            }
+
         });
 
         notHaveAccountText.setOnClickListener(view -> {
@@ -54,27 +56,31 @@ public class MainActivity extends AppCompatActivity {
         DatabaseConfiguration.DatabaseUser(0, "kareltan", "dongo", "karel.tan@gmail.com", "INDO", "085211999998");
     }
 
-    private void validationNotEmpty(String username, String password) {
+    private boolean validationNotEmpty(String username, String password) {
         if(username.isEmpty() || password.isEmpty()){
             Toast.makeText(MainActivity.this, "Email or password cannot be empty!", Toast.LENGTH_SHORT).show();
+            return false;
         }
+        return true;
     }
 
-    private void validationAccount(AtomicInteger index, String password) {
+    private boolean validationAccount(AtomicInteger index, String password) {
         if(index.get() != -1){
             if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
-                return;
+                return false;
             }
             //TODO: create homepage
             else {
                 Toast.makeText(MainActivity.this, "Successfully Login!", Toast.LENGTH_SHORT).show();
 //                    Intent intentHome = new Intent(MainActivity.this, Home.class);
 //                    startActivity(intentHome);
+                return true;
             }
-        } else {
-            Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
         }
+
+        Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
+        return false;
     }
 
 }
