@@ -137,7 +137,7 @@
         android:layout_gravity="center" />
 
     <EditText
-        android:id="@+id/tv_input_password_register"
+        android:id="@+id/pt_input_password_register"
         android:layout_width="303dp"
         android:layout_height="48dp"
         android:layout_marginTop="3dp"
@@ -150,9 +150,9 @@
         android:id="@+id/button_register_register_page"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_height="38dp"
         android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:text="REGISTER" />
 
     <TextView
@@ -161,7 +161,7 @@
         android:layout_height="23dp"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="Already has account?"
+        android:text="Already has an account?"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/dark_green"
