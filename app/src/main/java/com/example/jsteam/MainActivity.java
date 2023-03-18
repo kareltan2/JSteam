@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
     private void testingConfiguration() {
         //testing purpose
         DatabaseConfiguration.DatabaseUser(0, "kareltan", "dongo", "karel.tan@gmail.com", "INDO", "085211999998");
+        DatabaseConfiguration.DatabaseGame("Mobile Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
+        DatabaseConfiguration.DatabaseGame("League of Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
+        DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
     }
 
     private void validationNotEmpty(String username, String password) {
@@ -64,13 +67,11 @@ public class MainActivity extends AppCompatActivity {
         if(index.get() != -1){
             if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
-                return;
             }
-            //TODO: create homepage
             else {
                 Toast.makeText(MainActivity.this, "Successfully Login!", Toast.LENGTH_SHORT).show();
-//                    Intent intentHome = new Intent(MainActivity.this, Home.class);
-//                    startActivity(intentHome);
+                Intent intentHome = new Intent(MainActivity.this, HomePageActivity.class);
+                startActivity(intentHome);
             }
         } else {
             Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
