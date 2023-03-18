@@ -23,7 +23,7 @@ public class ReviewSectionFragment extends Fragment {
         binding = FragmentReviewSectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textReviewSection;
+        final TextView textView = binding.tvReviewSection;
         reviewSectionModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

@@ -45,6 +45,7 @@ public class GamePageAdapter extends RecyclerView.Adapter<GamePageAdapter.ViewHo
         holder.tvGameGenre.setText(game.getGenre());
         holder.tvGamePrice.setText(String.valueOf(game.getPrice()));
         holder.cvGamePageList.setOnClickListener(view -> {
+            // TODO: Game Detail
             Intent intent = new Intent(context, MainActivity.class);
             intent.putExtra("gameName", game.getName());
             intent.putExtra("gameGenre", game.getGenre());

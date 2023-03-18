@@ -29,6 +29,11 @@ public class DatabaseConfiguration {
         reviews.add(review);
     }
 
+    public static void removeDatabaseReviewComment(String reviewComment){
+        int indexToBeDeleted = findIndexReviewComment(reviewComment);
+        reviews.remove(indexToBeDeleted);
+    }
+
     public static Integer findIndexUser(String username){
         int index = -1;
 
@@ -37,6 +42,20 @@ public class DatabaseConfiguration {
                 index = i;
                 break;
             }
+        }
+
+        return index;
+    }
+
+    static int findIndexReviewComment(String reviewComment){
+        int index = -1;
+
+        for (int i = 0 ; i < DatabaseConfiguration.reviews.size() ; i++){
+            if(DatabaseConfiguration.reviews.get(i).getContent().equals(reviewComment)){
+                index = i;
+                break;
+            }
+            else index = -1;
         }
 
         return index;
