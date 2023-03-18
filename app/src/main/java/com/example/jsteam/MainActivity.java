@@ -4,44 +4,77 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.jsteam.model.DatabaseConfiguration;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author kareltan
  */
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginButton;
-    private TextView registerButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         init();
     }
 
-    private void init() {
-        loginButton = findViewById(R.id.button_login_login_page);
-        registerButton = findViewById(R.id.tv_dont_have_account);
+    private void init(){
+        testingConfiguration();
+        AtomicInteger index = new AtomicInteger();
+        Button loginButton = findViewById(R.id.button_login_login_page);
+        TextView notHaveAccountText = findViewById(R.id.tv_didnt_have_account);
+        EditText usernameLoginPage = findViewById(R.id.pt_username_login);
+        EditText passwordLoginPage = findViewById(R.id.pt_password_login);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        loginButton.setOnClickListener(view -> {
+            String username = String.valueOf(usernameLoginPage.getText());
+            String password = String.valueOf(passwordLoginPage.getText());
 
-            }
+            validationNotEmpty(username, password);
+            index.set(DatabaseConfiguration.findIndexUser(username));
+            validationAccount(index, password);
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        notHaveAccountText.setOnClickListener(view -> {
+            Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(registerIntent);
         });
+
     }
+
+    private void testingConfiguration() {
+        //testing purpose
+        DatabaseConfiguration.DatabaseUser(0, "kareltan", "dongo", "karel.tan@gmail.com", "INDO", "085211999998");
+    }
+
+    private void validationNotEmpty(String username, String password) {
+        if(username.isEmpty() || password.isEmpty()){
+            Toast.makeText(MainActivity.this, "Email or password cannot be empty!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void validationAccount(AtomicInteger index, String password) {
+        if(index.get() != -1){
+            if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
+                Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            //TODO: create homepage
+            else {
+                Toast.makeText(MainActivity.this, "Successfully Login!", Toast.LENGTH_SHORT).show();
+//                    Intent intentHome = new Intent(MainActivity.this, Home.class);
+//                    startActivity(intentHome);
+            }
+        } else {
+            Toast.makeText(MainActivity.this, "Unregistered User! Please register first!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
