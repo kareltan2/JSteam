@@ -21,7 +21,7 @@ public class ReviewSectionFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ReviewSectionModel reviewSectionModel = new ViewModelProvider(this).get(ReviewSectionModel.class);
+        new ViewModelProvider(this).get(ReviewSectionModel.class);
 
         binding = FragmentReviewSectionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

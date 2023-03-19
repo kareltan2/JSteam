@@ -22,13 +22,12 @@ import java.util.Vector;
 public class GamePageFragment extends Fragment {
 
     private FragmentGamePageBinding binding;
-    private Context context;
     private Vector<Game> gamesListVector = new Vector<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GamePageModel gamePageModel = new ViewModelProvider(this).get(GamePageModel.class);
+       new ViewModelProvider(this).get(GamePageModel.class);
 
         binding = FragmentGamePageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
