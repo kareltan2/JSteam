@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         DatabaseConfiguration.DatabaseGame("League of Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan");
+        DatabaseConfiguration.DatabaseReview("League of Legend", "a very good game with extraordinary experience and UI", "kareltan");
+        DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan3");
     }
 
     private boolean validationNotEmpty(String username, String password) {

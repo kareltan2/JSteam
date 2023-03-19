@@ -15,6 +15,10 @@ import com.example.jsteam.Adapter.ReviewSectionAdapter;
 import com.example.jsteam.databinding.FragmentReviewSectionBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 
+import java.util.Objects;
+import java.util.Vector;
+import java.util.stream.Collectors;
+
 public class ReviewSectionFragment extends Fragment {
 
     private FragmentReviewSectionBinding binding;
@@ -39,8 +43,17 @@ public class ReviewSectionFragment extends Fragment {
     private void init(){
         final RecyclerView recyclerViewReviewSectionList = binding.rvReviewSectionList;
 
-        //TODO: Logic Database Only Show Review from Specific User Logged In
-        recyclerViewReviewSectionList.setAdapter(new ReviewSectionAdapter(binding.getRoot().getContext(), DatabaseConfiguration.reviews));
+        recyclerViewReviewSectionList.setAdapter(new ReviewSectionAdapter(binding.getRoot().getContext(),
+                DatabaseConfiguration.reviews.stream()
+                        .filter(review ->
+                                review.getUsername().equals(
+                                        Objects.requireNonNull(
+                                                getActivity()).getIntent().getStringExtra("username")
+                                )
+                        )
+                        .collect(Collectors.toCollection(Vector::new))
+        ));
         recyclerViewReviewSectionList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
+
     }
 }

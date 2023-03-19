@@ -1,6 +1,5 @@
 package com.example.jsteam.Adapter;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -48,19 +47,18 @@ public class ReviewSectionAdapter extends RecyclerView.Adapter<ReviewSectionAdap
         holder.tvGameName.setText(review.getGameName());
         holder.tvUsername.setText(review.getUsername());
         holder.tvReview.setText(review.getContent());
+
         holder.buttonDeleteReview.setOnClickListener(view -> {
             Intent intent = new Intent(context, ReviewSectionActivity.class);
             String reviewContent = holder.tvReview.getText().toString();
             DatabaseConfiguration.removeDatabaseReviewComment(reviewContent);
+            intent.putExtra("username", review.getUsername());
             context.startActivity(intent);
         });
 
-        holder.buttonUpdateReview.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                PopUpEditReviewActivity popUpClass = new PopUpEditReviewActivity();
-                popUpClass.popUpEditReview(view);
-            }
+        holder.buttonUpdateReview.setOnClickListener(view -> {
+            PopUpEditReviewActivity popUpClass = new PopUpEditReviewActivity();
+            popUpClass.popUpEditReview(view, context, review.getUsername(), position);
         });
     }
 

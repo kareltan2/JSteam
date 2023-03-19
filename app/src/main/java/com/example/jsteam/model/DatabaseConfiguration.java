@@ -34,6 +34,10 @@ public class DatabaseConfiguration {
         reviews.remove(indexToBeDeleted);
     }
 
+    public static void updateDatabaseReviewComment(String username, int index, String updatedContent){
+        reviews.get(index).setContent(updatedContent);
+    }
+
     public static Integer findIndexUser(String username){
         int index = -1;
 
