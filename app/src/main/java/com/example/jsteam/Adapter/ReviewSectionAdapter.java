@@ -1,5 +1,6 @@
 package com.example.jsteam.Adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.PopUpEditReviewActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.ReviewSectionActivity;
 import com.example.jsteam.model.DatabaseConfiguration;
@@ -53,9 +55,12 @@ public class ReviewSectionAdapter extends RecyclerView.Adapter<ReviewSectionAdap
             context.startActivity(intent);
         });
 
-        // TODO: Update Database
-        holder.buttonUpdateReview.setOnClickListener(view -> {
-            // TO DO: Adding logic update database
+        holder.buttonUpdateReview.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                PopUpEditReviewActivity popUpClass = new PopUpEditReviewActivity();
+                popUpClass.popUpEditReview(view);
+            }
         });
     }
 
