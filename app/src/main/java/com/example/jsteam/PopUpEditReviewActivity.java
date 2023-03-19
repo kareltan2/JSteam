@@ -1,5 +1,4 @@
 package com.example.jsteam;
-
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +7,9 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
-public class PopUpEditReviewActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PopUpEditReviewActivity extends AppCompatActivity {
     public void popUpEditReview(final View view) {
         LayoutInflater inflater = (LayoutInflater) view.getContext()
                 .getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
