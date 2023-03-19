@@ -24,7 +24,7 @@ public class PopUpEditReviewActivity {
         Button buttonEditReviewPopup = popupShow.findViewById(R.id.button_edit_review_popup);
 
         buttonEditReviewPopup.setOnClickListener(v -> {
-            //TO DO : Update Database Edit Review
+            //TODO : Update Database Edit Review
             Toast.makeText(view.getContext(), "Review Content Updated", Toast.LENGTH_SHORT).show();
             popupWindow.dismiss();
         });

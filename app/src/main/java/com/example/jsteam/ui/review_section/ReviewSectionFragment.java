@@ -39,6 +39,7 @@ public class ReviewSectionFragment extends Fragment {
     private void init(){
         final RecyclerView recyclerViewReviewSectionList = binding.rvReviewSectionList;
 
+        //TODO: Logic Database Only Show Review from Specific User Logged In
         recyclerViewReviewSectionList.setAdapter(new ReviewSectionAdapter(binding.getRoot().getContext(), DatabaseConfiguration.reviews));
         recyclerViewReviewSectionList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
     }
