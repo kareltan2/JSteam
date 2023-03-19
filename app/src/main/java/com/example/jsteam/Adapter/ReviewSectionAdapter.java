@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.PopUpConfirmationActivity;
 import com.example.jsteam.PopUpEditReviewActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.ReviewSectionActivity;
@@ -49,11 +50,9 @@ public class ReviewSectionAdapter extends RecyclerView.Adapter<ReviewSectionAdap
         holder.tvReview.setText(review.getContent());
 
         holder.buttonDeleteReview.setOnClickListener(view -> {
-            Intent intent = new Intent(context, ReviewSectionActivity.class);
             String reviewContent = holder.tvReview.getText().toString();
-            DatabaseConfiguration.removeDatabaseReviewComment(reviewContent);
-            intent.putExtra("username", review.getUsername());
-            context.startActivity(intent);
+            PopUpConfirmationActivity popUpConfirmation = new PopUpConfirmationActivity();
+            popUpConfirmation.popUpConfirmation(view, context, reviewContent, review.getUsername());
         });
 
         holder.buttonUpdateReview.setOnClickListener(view -> {

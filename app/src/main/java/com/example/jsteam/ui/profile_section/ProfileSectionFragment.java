@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.jsteam.MainActivity;
+import com.example.jsteam.PopUpConfirmationActivity;
 import com.example.jsteam.databinding.FragmentProfileSectionBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.User;
@@ -58,8 +59,8 @@ public class ProfileSectionFragment extends Fragment {
         phoneProfilePage.setText(phoneText);
 
         logoutButton.setOnClickListener(view -> {
-            Intent intent = new Intent(getActivity(), MainActivity.class);
-            startActivity(intent);
+            PopUpConfirmationActivity popUpConfirmation = new PopUpConfirmationActivity();
+            popUpConfirmation.popUpConfirmation(view, getActivity());
         });
     }
 }

@@ -42,14 +42,9 @@ public class PopUpEditReviewActivity extends AppCompatActivity {
             EditText newContent = popupShow.findViewById(R.id.pt_edit_review_pop_up);
 
             if(!String.valueOf(newContent.getText()).isEmpty()){
-                Intent intent = new Intent(context, ReviewSectionActivity.class);
-
-                DatabaseConfiguration.updateDatabaseReviewComment(username, index, String.valueOf(newContent.getText()));
-                Toast.makeText(view.getContext(), "Review Content Updated", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
-
-                intent.putExtra("username", username);
-                context.startActivity(intent);
+                PopUpConfirmationActivity popUpConfirmation = new PopUpConfirmationActivity();
+                popUpConfirmation.popUpConfirmation(view, context, username, index, String.valueOf(newContent.getText()));
             } else {
                 Toast.makeText(view.getContext(), "The content must not be empty!", Toast.LENGTH_SHORT).show();
             }
