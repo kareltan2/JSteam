@@ -14,7 +14,7 @@
         <activity
             android:name=".ReviewSectionActivity"
             android:exported="false"
-            android:label="ReviewSectionActivity"/>
+            android:label="@string/title_review_section"/>
         <activity
             android:name=".HomePageActivity"
             android:exported="false"

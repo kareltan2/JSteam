@@ -1,16 +1,20 @@
 package com.example.jsteam.ui.game_page_section;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.Adapter.GamePageAdapter;
 import com.example.jsteam.databinding.FragmentGamePageBinding;
+import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.Game;
 
 import java.util.Vector;
@@ -18,6 +22,7 @@ import java.util.Vector;
 public class GamePageFragment extends Fragment {
 
     private FragmentGamePageBinding binding;
+    private Context context;
     private Vector<Game> gamesListVector = new Vector<>();
 
     @Override
@@ -28,8 +33,7 @@ public class GamePageFragment extends Fragment {
         binding = FragmentGamePageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.tvTextGamePage;
-        gamePageModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        init();
         return root;
     }
 
@@ -37,5 +41,12 @@ public class GamePageFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void init(){
+        final RecyclerView recyclerViewGamesPageList = binding.rvGamePageList;
+
+        recyclerViewGamesPageList.setAdapter(new GamePageAdapter(binding.getRoot().getContext(), DatabaseConfiguration.games));
+        recyclerViewGamesPageList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
     }
 }

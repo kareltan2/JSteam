@@ -1,20 +1,15 @@
 package com.example.jsteam;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.jsteam.Adapter.GamePageAdapter;
 import com.example.jsteam.databinding.ActivityHomePageBinding;
-import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.Game;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Vector;
@@ -41,33 +36,6 @@ public class HomePageActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        init();
-    }
-
-    private void init(){
-        recyclerViewGamesPageList = findViewById(R.id.rv_game_page_list);
-
-        recyclerViewGamesPageList.setAdapter(new GamePageAdapter(this, DatabaseConfiguration.games));
-        recyclerViewGamesPageList.setLayoutManager(new LinearLayoutManager(this));
-        BottomNavigationItemView gamePageButton = findViewById(R.id.navigation_game_page);
-        BottomNavigationItemView reviewSectionButton = findViewById(R.id.navigation_review_section);
-        BottomNavigationItemView profileSection = findViewById(R.id.navigation_profile_section);
-
-        gamePageButton.setOnClickListener(view -> {
-            Intent intent = new Intent(HomePageActivity.this, HomePageActivity.class);
-            startActivity(intent);
-        });
-
-        reviewSectionButton.setOnClickListener(view -> {
-            Intent intent = new Intent(HomePageActivity.this, ReviewSectionActivity.class);
-            startActivity(intent);
-        });
-
-        //TODO: Profile Section Button
-//        profileSection.setOnClickListener(view -> {
-//            Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
-//            startActivity(intent);
-//        });
     }
 
 }
