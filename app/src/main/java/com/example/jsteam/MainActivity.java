@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         DatabaseConfiguration.DatabaseGame("Mobile Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseGame("League of Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
+        DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan");
+        DatabaseConfiguration.DatabaseReview("League of Legend", "a very good game with extraordinary experience and UI", "kareltan");
+        DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan3");
     }
 
     private boolean validationNotEmpty(String username, String password) {
@@ -71,11 +74,14 @@ public class MainActivity extends AppCompatActivity {
         if(index.get() != -1){
             if(!DatabaseConfiguration.users.get(index.get()).getPassword().equals(password)){
                 Toast.makeText(MainActivity.this, "Wrong Password!", Toast.LENGTH_SHORT).show();
+                return false;
             }
             else {
                 Toast.makeText(MainActivity.this, "Successfully Login!", Toast.LENGTH_SHORT).show();
                 Intent intentHome = new Intent(MainActivity.this, HomePageActivity.class);
+                intentHome.putExtra("username", DatabaseConfiguration.users.get(index.intValue()).getUsername());
                 startActivity(intentHome);
+                return true;
             }
         }
 
