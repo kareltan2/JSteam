@@ -142,6 +142,7 @@
         android:layout_marginTop="0.25dp"
         android:ems="10"
         android:hint="Review. . . "
+        android:inputType="text"
         android:layout_gravity="center" />
 
     <Button
