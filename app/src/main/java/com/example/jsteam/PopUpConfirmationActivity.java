@@ -15,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.jsteam.model.DatabaseConfiguration;
 
+/**
+ * @author kareltan
+ */
 public class PopUpConfirmationActivity extends AppCompatActivity {
 
     @Override

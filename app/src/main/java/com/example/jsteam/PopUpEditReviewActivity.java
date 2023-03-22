@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.jsteam.model.DatabaseConfiguration;
 
+/**
+ * @author kareltan
+ */
 public class PopUpEditReviewActivity extends AppCompatActivity {
 
     @Override

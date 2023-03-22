@@ -21,6 +21,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Vector;
 
+/**
+ * @author kareltan
+ */
 public class ReviewSectionActivity extends AppCompatActivity {
     private ActivityReviewSectionBinding binding;
     private Vector<Review> reviews = new Vector<>();

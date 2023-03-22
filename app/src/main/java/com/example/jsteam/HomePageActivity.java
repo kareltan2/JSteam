@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Vector;
 
-
+/**
+ * @author kareltan
+ */
 public class HomePageActivity extends AppCompatActivity {
 
     private ActivityHomePageBinding binding;
