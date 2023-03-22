@@ -142,7 +142,6 @@
         android:layout_marginTop="0.25dp"
         android:ems="10"
         android:hint="Review. . . "
-        android:inputType="textPassword"
         android:layout_gravity="center" />
 
     <Button
