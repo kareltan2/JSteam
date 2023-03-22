@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseConfiguration.DatabaseGame("Mobile Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseGame("League of Legend", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
         DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9F, 90000, "A war games with free superior hero skin");
+        DatabaseConfiguration.DatabaseGame("Among Us", "Tactical Games", 4.9F, 1000000, "A tactical games and multiplayer game");
         DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan");
         DatabaseConfiguration.DatabaseReview("League of Legend", "a very good game with extraordinary experience and UI", "kareltan");
         DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan3");

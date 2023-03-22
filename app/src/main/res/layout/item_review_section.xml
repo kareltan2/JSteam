@@ -22,7 +22,7 @@
             android:layout_height="194dp"
             android:layout_margin="8dp"
             android:layout_weight="1.5"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/among_us_profile_game" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,11 +35,11 @@
                 android:id="@+id/tv_title_game_on_review_section"
                 android:layout_width="218dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="[TITLE]"
                 android:textColor="@color/dark_green"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -47,19 +47,24 @@
                 android:layout_width="217dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="[USERNAME]" />
+                android:gravity="center"
+                android:text="[USERNAME]"
+                android:textColor="@color/light_green"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/tv_review_on_review_section"
                 android:layout_width="217dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="[REVIEW COMMENT]" />
+                android:text="[REVIEW COMMENT]"
+                android:gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <Button
                     android:id="@+id/button_update_review_review_section"

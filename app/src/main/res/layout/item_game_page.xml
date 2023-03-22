@@ -8,45 +8,43 @@
     android:layout_margin="4dp"
     android:orientation="vertical"
     app:cardBackgroundColor="#FFFFFF"
-    app:cardElevation="6dp">
+    app:cardElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="211dp"
-        android:orientation="horizontal">
-
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/iv_game_on_game_page"
-            android:layout_width="369dp"
-            android:layout_height="194dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1.5"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/among_us_profile_game" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="7dp">
 
             <TextView
                 android:id="@+id/tv_title_game_on_game_page"
-                android:layout_width="218dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="center"
                 android:text="[TITLE]"
                 android:textColor="@color/dark_green"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_genre_game_on_game_page"
                 android:layout_width="217dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
                 android:text="[GENRE]" />
 
             <TextView
@@ -54,7 +52,9 @@
                 android:layout_width="217dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-                android:text="[PRICE]" />
+                android:text="[PRICE]"
+                android:textColor="@color/light_green"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

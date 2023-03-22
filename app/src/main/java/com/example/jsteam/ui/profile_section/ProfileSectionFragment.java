@@ -53,7 +53,7 @@ public class ProfileSectionFragment extends Fragment {
         String regionText = userLoggedIn.getRegion();
         String phoneText = userLoggedIn.getPhoneNumber();
 
-        usernameProfilePage.setText(usernameText);
+        usernameProfilePage.setText("Hello, " + usernameText + "!");
         emailProfilePage.setText(emailText);
         regionProfilePage.setText(regionText);
         phoneProfilePage.setText(phoneText);
