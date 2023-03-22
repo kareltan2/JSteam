@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.GamesDetailActivity;
 import com.example.jsteam.MainActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.model.Game;
@@ -43,13 +44,14 @@ public class GamePageAdapter extends RecyclerView.Adapter<GamePageAdapter.ViewHo
 
         holder.tvGameName.setText(game.getName());
         holder.tvGameGenre.setText(game.getGenre());
-        holder.tvGamePrice.setText(String.valueOf(game.getPrice()));
+        holder.tvGamePrice.setText("Rp." + String.valueOf(game.getPrice()));
         holder.cvGamePageList.setOnClickListener(view -> {
-            // TODO: Game Detail
-            Intent intent = new Intent(context, MainActivity.class);
+            Intent intent = new Intent(context, GamesDetailActivity.class);
             intent.putExtra("gameName", game.getName());
             intent.putExtra("gameGenre", game.getGenre());
-            intent.putExtra("gamePrice", game.getPrice());
+            intent.putExtra("gamePrice", game.getPrice().toString());
+            intent.putExtra("gameRating", game.getRating().toString());
+            intent.putExtra("gameDescription", game.getDescription());
             context.startActivity(intent);
         });
     }
