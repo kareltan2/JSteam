@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.jsteam.model.DatabaseConfiguration;
 
 public class GamesDetailActivity extends AppCompatActivity {
 
@@ -38,6 +41,7 @@ public class GamesDetailActivity extends AppCompatActivity {
         TextView gameRating = findViewById(R.id.tv_rating_value_game_on_game_detail_page);
         TextView gamePrice = findViewById(R.id.tv_price_value_game_on_game_detail_page);
         TextView gameDescription = findViewById(R.id.tv_description_game_on_game_detail_page);
+        Button reviewGameButton = findViewById(R.id.button_add_review_game_detail);
 
         String gameNameText = getIntent().getStringExtra("gameName");
         String gameGenreText = getIntent().getStringExtra("gameGenre");
@@ -50,5 +54,9 @@ public class GamesDetailActivity extends AppCompatActivity {
         gameRating.setText(gameRatingText);
         gamePrice.setText("Rp." + gamePriceText);
         gameDescription.setText(gameDescriptionText);
+
+        reviewGameButton.setOnClickListener(view -> {
+            //TO DO: Add to database review
+        });
     }
 }
