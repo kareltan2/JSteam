@@ -9,13 +9,13 @@ public class Game {
 
     private String genre;
 
-    private Float rating;
+    private Double rating;
 
     private Integer price;
 
     private String description;
 
-    public Game(String name, String genre, Float rating, Integer price, String description) {
+    public Game(String name, String genre, Double rating, Integer price, String description) {
         this.name = name;
         this.genre = genre;
         this.rating = rating;
@@ -39,11 +39,11 @@ public class Game {
         this.genre = genre;
     }
 
-    public Float getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 

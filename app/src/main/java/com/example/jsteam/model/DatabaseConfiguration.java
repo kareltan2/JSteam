@@ -1,6 +1,8 @@
 package com.example.jsteam.model;
 
+import java.util.List;
 import java.util.Vector;
+import java.util.stream.Collectors;
 
 /**
  * @author kareltan
@@ -19,7 +21,7 @@ public class DatabaseConfiguration {
         users.add(user);
     }
 
-    public static void DatabaseGame(String name, String genre, Float rating, Integer price, String description){
+    public static void DatabaseGame(String name, String genre, Double rating, Integer price, String description){
         Game game = new Game(name, genre, rating, price, description);
         games.add(game);
     }
@@ -29,13 +31,17 @@ public class DatabaseConfiguration {
         reviews.add(review);
     }
 
-    public static void removeDatabaseReviewComment(String reviewComment){
-        int indexToBeDeleted = findIndexReviewComment(reviewComment);
+    public static void removeDatabaseReviewComment(String reviewComment, String username, String gameName){
+        int indexToBeDeleted = findIndexReviewComment(reviewComment, username, gameName);
         reviews.remove(indexToBeDeleted);
     }
 
-    public static void updateDatabaseReviewComment(String username, int index, String updatedContent){
-        reviews.get(index).setContent(updatedContent);
+    public static void updateDatabaseReviewComment(String username, String gameName, String oldContent, String updatedContent){
+        reviews.forEach(review -> {
+            if(review.getUsername().equals(username) && review.getGameName().equals(gameName) && review.getContent().equals(oldContent)){
+                review.setContent(updatedContent);
+            }
+        });
     }
 
     public static Integer findIndexUser(String username){
@@ -51,11 +57,14 @@ public class DatabaseConfiguration {
         return index;
     }
 
-    static int findIndexReviewComment(String reviewComment){
+    static int findIndexReviewComment(String reviewComment, String username, String gameName){
         int index = -1;
 
         for (int i = 0 ; i < DatabaseConfiguration.reviews.size() ; i++){
-            if(DatabaseConfiguration.reviews.get(i).getContent().equals(reviewComment)){
+            if(DatabaseConfiguration.reviews.get(i).getContent().equals(reviewComment) &&
+                    DatabaseConfiguration.reviews.get(i).getUsername().equals(username) &&
+                    DatabaseConfiguration.reviews.get(i).getGameName().equals(gameName)
+            ){
                 index = i;
                 break;
             }
