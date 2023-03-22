@@ -1,18 +1,16 @@
-package com.example.jsteam;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.jsteam.activity.prelogin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jsteam.model.DatabaseConfiguration;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import com.example.jsteam.R;
+import com.example.jsteam.model.DatabaseConfiguration;
 
 public class RegisterActivity extends AppCompatActivity {
 

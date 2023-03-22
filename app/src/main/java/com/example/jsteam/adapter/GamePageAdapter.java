@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.GamesDetailActivity;
+import com.example.jsteam.activity.core.GamesDetailActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.model.Game;
 

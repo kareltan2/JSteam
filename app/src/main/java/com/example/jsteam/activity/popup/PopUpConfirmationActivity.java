@@ -1,4 +1,4 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.popup;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.jsteam.activity.prelogin.MainActivity;
+import com.example.jsteam.R;
+import com.example.jsteam.activity.core.ReviewSectionActivity;
 import com.example.jsteam.model.DatabaseConfiguration;
 
 public class PopUpConfirmationActivity extends AppCompatActivity {

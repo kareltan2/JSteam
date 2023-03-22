@@ -1,4 +1,4 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.core;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jsteam.R;
 import com.example.jsteam.model.DatabaseConfiguration;
 
 public class GamesDetailActivity extends AppCompatActivity {

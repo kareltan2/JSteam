@@ -1,6 +1,5 @@
 package com.example.jsteam.ui.profile_section;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.jsteam.MainActivity;
-import com.example.jsteam.PopUpConfirmationActivity;
+import com.example.jsteam.activity.popup.PopUpConfirmationActivity;
 import com.example.jsteam.databinding.FragmentProfileSectionBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.User;

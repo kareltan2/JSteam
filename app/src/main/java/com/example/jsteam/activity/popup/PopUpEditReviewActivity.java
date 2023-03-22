@@ -1,7 +1,6 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.popup;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,7 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.jsteam.model.DatabaseConfiguration;
+import com.example.jsteam.R;
 
 public class PopUpEditReviewActivity extends AppCompatActivity {
 

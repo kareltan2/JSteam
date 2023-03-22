@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.PopUpConfirmationActivity;
-import com.example.jsteam.PopUpEditReviewActivity;
+import com.example.jsteam.activity.popup.PopUpConfirmationActivity;
+import com.example.jsteam.activity.popup.PopUpEditReviewActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.model.Review;
 

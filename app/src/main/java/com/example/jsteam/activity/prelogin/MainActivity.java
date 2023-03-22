@@ -1,4 +1,4 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.prelogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jsteam.activity.core.HomePageActivity;
+import com.example.jsteam.R;
 import com.example.jsteam.model.DatabaseConfiguration;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -26,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init(){
-        testingConfiguration();
         AtomicInteger index = new AtomicInteger();
         Button loginButton = findViewById(R.id.button_login_login_page);
         TextView notHaveAccountText = findViewById(R.id.tv_didnt_have_account);
@@ -49,18 +50,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(registerIntent);
         });
 
-    }
-
-    private void testingConfiguration() {
-        //testing purpose
-        DatabaseConfiguration.DatabaseUser(0, "kareltan", "dongo", "karel.tan@gmail.com", "INDO", "085211999998");
-        DatabaseConfiguration.DatabaseGame("Mobile Legend", "War Games Explorer", 4.9, 90000, "A war games with free superior hero skin");
-        DatabaseConfiguration.DatabaseGame("League of Legend", "War Games Explorer", 4.9, 90000, "A war games with free superior hero skin");
-        DatabaseConfiguration.DatabaseGame("Clash of Clans", "War Games Explorer", 4.9, 90000, "A war games with free superior hero skin");
-        DatabaseConfiguration.DatabaseGame("Among Us", "Tactical Games", 4.9, 1000000, "A tactical games and multiplayer game");
-        DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan");
-        DatabaseConfiguration.DatabaseReview("League of Legend", "a very good game with extraordinary experience and UI", "kareltan");
-        DatabaseConfiguration.DatabaseReview("Mobile Legend", "a very good game with extraordinary experience and UI", "kareltan3");
     }
 
     private boolean validationNotEmpty(String username, String password) {
