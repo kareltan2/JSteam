@@ -19,7 +19,7 @@ public class DatabaseConfiguration {
         users.add(user);
     }
 
-    public static void DatabaseGame(String name, String genre, Float rating, Integer price, String description){
+    public static void DatabaseGame(String name, String genre, Double rating, Integer price, String description){
         Game game = new Game(name, genre, rating, price, description);
         games.add(game);
     }
