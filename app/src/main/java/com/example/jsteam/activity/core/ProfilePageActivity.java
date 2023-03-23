@@ -12,6 +12,9 @@ import com.example.jsteam.R;
 import com.example.jsteam.databinding.ActivityProfilePageBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * @author kareltan
+ */
 public class ProfilePageActivity extends AppCompatActivity {
 
     private ActivityProfilePageBinding binding;

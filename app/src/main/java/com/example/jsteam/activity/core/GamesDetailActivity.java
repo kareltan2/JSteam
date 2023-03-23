@@ -14,6 +14,9 @@ import android.widget.Toast;
 import com.example.jsteam.R;
 import com.example.jsteam.model.DatabaseConfiguration;
 
+/**
+ * @author kareltan
+ */
 public class GamesDetailActivity extends AppCompatActivity {
 
     @Override

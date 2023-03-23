@@ -9,6 +9,9 @@ import com.example.jsteam.activity.prelogin.MainActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.model.DatabaseConfiguration;
 
+/**
+ * @author kareltan
+ */
 public class InitializeActivity extends AppCompatActivity {
 
     @Override
