@@ -1,4 +1,4 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.popup;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.jsteam.activity.prelogin.MainActivity;
+import com.example.jsteam.R;
+import com.example.jsteam.activity.core.ReviewSectionActivity;
 import com.example.jsteam.model.DatabaseConfiguration;
 
 public class PopUpConfirmationActivity extends AppCompatActivity {
@@ -23,7 +26,7 @@ public class PopUpConfirmationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pop_up_confirmation);
     }
 
-    public void popUpConfirmation(final View view, Context context, String username, int index, String newContent) {
+    public void popUpConfirmation(final View view, Context context, String username, String gameName, String oldContent, String newContent) {
         View popupShow = initPopUpShow(view);
         PopupWindow popupWindow = initPopUpWindow(popupShow, view);
 
@@ -33,7 +36,7 @@ public class PopUpConfirmationActivity extends AppCompatActivity {
         buttonYes.setOnClickListener(v -> {
             Intent intent = new Intent(context, ReviewSectionActivity.class);
 
-            DatabaseConfiguration.updateDatabaseReviewComment(username, index, newContent);
+            DatabaseConfiguration.updateDatabaseReviewComment(username, gameName, oldContent, newContent);
             Toast.makeText(view.getContext(), "Review Content Updated", Toast.LENGTH_SHORT).show();
 
             popupWindow.dismiss();
@@ -49,7 +52,7 @@ public class PopUpConfirmationActivity extends AppCompatActivity {
         });
     }
 
-    public void popUpConfirmation(final View view, Context context, String reviewContent, String username) {
+    public void popUpConfirmation(final View view, Context context, String reviewContent, String username, String gameName) {
         View popupShow = initPopUpShow(view);
         PopupWindow popupWindow = initPopUpWindow(popupShow, view);
 
@@ -59,7 +62,7 @@ public class PopUpConfirmationActivity extends AppCompatActivity {
         buttonYes.setOnClickListener(v -> {
             Intent intent = new Intent(context, ReviewSectionActivity.class);
 
-            DatabaseConfiguration.removeDatabaseReviewComment(reviewContent);
+            DatabaseConfiguration.removeDatabaseReviewComment(reviewContent, username, gameName);
             intent.putExtra("username", username);
 
             context.startActivity(intent);

@@ -1,7 +1,6 @@
-package com.example.jsteam.Adapter;
+package com.example.jsteam.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.PopUpConfirmationActivity;
-import com.example.jsteam.PopUpEditReviewActivity;
+import com.example.jsteam.activity.popup.PopUpConfirmationActivity;
+import com.example.jsteam.activity.popup.PopUpEditReviewActivity;
 import com.example.jsteam.R;
-import com.example.jsteam.ReviewSectionActivity;
-import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.Review;
 
 import java.util.Vector;
@@ -52,12 +49,12 @@ public class ReviewSectionAdapter extends RecyclerView.Adapter<ReviewSectionAdap
         holder.buttonDeleteReview.setOnClickListener(view -> {
             String reviewContent = holder.tvReview.getText().toString();
             PopUpConfirmationActivity popUpConfirmation = new PopUpConfirmationActivity();
-            popUpConfirmation.popUpConfirmation(view, context, reviewContent, review.getUsername());
+            popUpConfirmation.popUpConfirmation(view, context, reviewContent, review.getUsername(), review.getGameName());
         });
 
         holder.buttonUpdateReview.setOnClickListener(view -> {
             PopUpEditReviewActivity popUpClass = new PopUpEditReviewActivity();
-            popUpClass.popUpEditReview(view, context, review.getUsername(), position);
+            popUpClass.popUpEditReview(view, context, review.getUsername(), review.getGameName(), review.getContent());
         });
     }
 

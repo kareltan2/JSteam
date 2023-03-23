@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.Adapter.ReviewSectionAdapter;
+import com.example.jsteam.adapter.ReviewSectionAdapter;
 import com.example.jsteam.databinding.FragmentReviewSectionBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 
@@ -54,6 +54,6 @@ public class ReviewSectionFragment extends Fragment {
                         .collect(Collectors.toCollection(Vector::new))
         ));
         recyclerViewReviewSectionList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-
+        getActivity().getIntent().putExtra("username", getActivity().getIntent().getStringExtra("username"));
     }
 }

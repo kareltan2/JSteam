@@ -1,7 +1,8 @@
-package com.example.jsteam;
+package com.example.jsteam.activity.core;
 
 import android.os.Bundle;
 
+import com.example.jsteam.R;
 import com.example.jsteam.databinding.ActivityHomePageBinding;
 import com.example.jsteam.model.Game;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

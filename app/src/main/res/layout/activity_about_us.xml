@@ -23,7 +23,7 @@
             app:contentScrim="?attr/colorPrimary">
 
             <ImageView
-                android:id="@+id/app_bar_image"
+                android:id="@+id/app_bar_image_about_us"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_collapseMode="parallax"
@@ -46,38 +46,32 @@
 
 
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
         <LinearLayout
-            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/shape"
             android:orientation="vertical"
-            tools:context=".activity.prelogin.MainActivity"
-            android:background="@drawable/shape"    >
+            android:padding="16dp"
+            tools:context=".activity.prelogin.MainActivity">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp" />
-
-            <TextView
-                android:id="@+id/tv_title_login"
+                android:id="@+id/tv_title_about_us"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="JSteam"
                 android:textColor="@color/dark_green"
                 android:textSize="48sp"
-                android:layout_gravity="center"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_slogan_login"
-                android:layout_width="203dp"
+                android:id="@+id/tv_slogan_about_us"
+                android:layout_width="263dp"
                 android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:text="Your Paradise Game Place"
-                android:textStyle="bold"
+                android:text="JSteam’s Headquarter in Jakarta"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/soft_black"
@@ -85,75 +79,38 @@
                 android:textColorHint="#4CAF50"
                 android:textDirection="firstStrongLtr"
                 android:textIsSelectable="false"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_username_title_login"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_description_about_us"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:text="Username"
-                android:textColor="@color/dark_green"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_gravity="center" />
-
-            <EditText
-                android:id="@+id/pt_username_login"
-                android:layout_width="303dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Username . . ."
-                android:inputType="text"
-                android:layout_gravity="center" />
+                android:justificationMode="inter_word"
+                android:text="JSteam is a leading digital distribution platform that offers various of video games, entertainment content to millions of users worldwide, discussion about game, also can create game! Founded in 2023, the company's vision to provide a platform which can boost gaming experience. Our Founder: Karel Tan is inspired by his experience about many limitation on gamers to express their emotion and freedom. Therefore, JSteam is now available to become the solution."
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tv_title_password_login"
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Password"
-                android:textColor="@color/dark_green"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:layout_height="8dp"
                 android:layout_gravity="center" />
 
-            <EditText
-                android:id="@+id/pt_password_login"
-                android:layout_width="303dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Password. . . "
-                android:inputType="textPassword"
+            <RatingBar
+                android:id="@+id/rb_about_us"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
                 android:layout_gravity="center" />
 
             <Button
-                android:id="@+id/button_login_login_page"
+                android:id="@+id/button_submit_about_us"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:text="LOGIN" />
-
-            <TextView
-                android:id="@+id/tv_didnt_have_account"
-                android:layout_width="212dp"
-                android:layout_height="23dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:text="Didn’t have an account?"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@color/dark_green"
-                android:textColorHighlight="#F8F2F4"
-                android:textColorHint="#4CAF50"
-                android:textDirection="firstStrongLtr"
-                android:textIsSelectable="false"
-                android:textSize="15sp"
-                android:textStyle="bold|italic" />
+                android:text="Submit Review To Playstore" />
 
         </LinearLayout>
 

@@ -1,5 +1,6 @@
-package com.example.jsteam.Adapter;
+package com.example.jsteam.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,8 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.GamesDetailActivity;
-import com.example.jsteam.MainActivity;
+import com.example.jsteam.activity.core.GamesDetailActivity;
 import com.example.jsteam.R;
 import com.example.jsteam.model.Game;
 
@@ -52,6 +52,7 @@ public class GamePageAdapter extends RecyclerView.Adapter<GamePageAdapter.ViewHo
             intent.putExtra("gamePrice", game.getPrice().toString());
             intent.putExtra("gameRating", game.getRating().toString());
             intent.putExtra("gameDescription", game.getDescription());
+            intent.putExtra("username", ((Activity) context).getIntent().getStringExtra("username"));
             context.startActivity(intent);
         });
     }

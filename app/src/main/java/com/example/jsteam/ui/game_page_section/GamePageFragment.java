@@ -1,6 +1,5 @@
 package com.example.jsteam.ui.game_page_section;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +11,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.jsteam.Adapter.GamePageAdapter;
+import com.example.jsteam.adapter.GamePageAdapter;
 import com.example.jsteam.databinding.FragmentGamePageBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.Game;
 
+import java.util.Objects;
 import java.util.Vector;
 
 public class GamePageFragment extends Fragment {
@@ -47,5 +47,6 @@ public class GamePageFragment extends Fragment {
 
         recyclerViewGamesPageList.setAdapter(new GamePageAdapter(binding.getRoot().getContext(), DatabaseConfiguration.games));
         recyclerViewGamesPageList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
+        Objects.requireNonNull(getActivity()).getIntent().putExtra("username", getActivity().getIntent().getStringExtra("username"));
     }
 }
