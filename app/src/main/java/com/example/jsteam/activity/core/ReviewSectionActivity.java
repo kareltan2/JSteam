@@ -1,23 +1,24 @@
 package com.example.jsteam.activity.core;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.os.Bundle;
-
 import com.example.jsteam.R;
 import com.example.jsteam.databinding.ActivityReviewSectionBinding;
-import com.example.jsteam.model.Review;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Vector;
 
 public class ReviewSectionActivity extends AppCompatActivity {
     private ActivityReviewSectionBinding binding;
-    private Vector<Review> reviews = new Vector<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,24 @@ public class ReviewSectionActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_review_section);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navViewReviewSection, navController);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.about_us_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId() == R.id.about_us_button){
+            Intent intent = new Intent(ReviewSectionActivity.this, AboutUsActivity.class);
+            intent.putExtra("username", getIntent().getStringExtra("username"));
+            startActivity(intent);
+            return true;
+        }
+        return false;
     }
 }
