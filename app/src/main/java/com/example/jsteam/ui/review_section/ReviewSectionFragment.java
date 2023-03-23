@@ -54,6 +54,6 @@ public class ReviewSectionFragment extends Fragment {
                         .collect(Collectors.toCollection(Vector::new))
         ));
         recyclerViewReviewSectionList.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-        getActivity().getIntent().putExtra("username", getActivity().getIntent().getStringExtra("username"));
+        Objects.requireNonNull(getActivity()).getIntent().putExtra("username", getActivity().getIntent().getStringExtra("username"));
     }
 }
