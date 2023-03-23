@@ -15,6 +15,10 @@
             android:name=".activity.core.GamesDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.core.AboutUsActivity"
+            android:exported="false"
+            android:label="Jsteam's Headquarter in Jakarta"/>
+        <activity
             android:name=".activity.popup.PopUpConfirmationActivity"
             android:exported="false" />
         <activity

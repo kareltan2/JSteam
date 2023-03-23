@@ -16,6 +16,8 @@ import com.example.jsteam.databinding.FragmentProfileSectionBinding;
 import com.example.jsteam.model.DatabaseConfiguration;
 import com.example.jsteam.model.User;
 
+import java.util.Objects;
+
 public class ProfileSectionFragment extends Fragment {
 
     private FragmentProfileSectionBinding binding;
@@ -60,5 +62,7 @@ public class ProfileSectionFragment extends Fragment {
             PopUpConfirmationActivity popUpConfirmation = new PopUpConfirmationActivity();
             popUpConfirmation.popUpConfirmation(view, getActivity());
         });
+
+        Objects.requireNonNull(getActivity()).getIntent().putExtra("username", getActivity().getIntent().getStringExtra("username"));
     }
 }
