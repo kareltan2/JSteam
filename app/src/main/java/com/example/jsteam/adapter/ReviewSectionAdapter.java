@@ -1,6 +1,8 @@
 package com.example.jsteam.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.jsteam.activity.core.GamesDetailActivity;
 import com.example.jsteam.activity.popup.PopUpConfirmationActivity;
 import com.example.jsteam.activity.popup.PopUpEditReviewActivity;
 import com.example.jsteam.R;
+import com.example.jsteam.model.DatabaseConfiguration;
+import com.example.jsteam.model.Game;
 import com.example.jsteam.model.Review;
 
 import java.util.Vector;
@@ -55,6 +60,22 @@ public class ReviewSectionAdapter extends RecyclerView.Adapter<ReviewSectionAdap
         holder.buttonUpdateReview.setOnClickListener(view -> {
             PopUpEditReviewActivity popUpClass = new PopUpEditReviewActivity();
             popUpClass.popUpEditReview(view, context, review.getUsername(), review.getGameName(), review.getContent());
+        });
+
+        holder.cvReviewSectionList.setOnClickListener(view -> {
+            Intent intent = new Intent(context, GamesDetailActivity.class);
+
+            int index = DatabaseConfiguration.findIndexGameByName(review.getGameName());
+            Game game = DatabaseConfiguration.games.get(index);
+
+            intent.putExtra("gameName", game.getName());
+            intent.putExtra("gameGenre", game.getGenre());
+            intent.putExtra("gamePrice", game.getPrice().toString());
+            intent.putExtra("gameRating", game.getRating().toString());
+            intent.putExtra("gameDescription", game.getDescription());
+            intent.putExtra("username", ((Activity) context).getIntent().getStringExtra("username"));
+
+            context.startActivity(intent);
         });
     }
 

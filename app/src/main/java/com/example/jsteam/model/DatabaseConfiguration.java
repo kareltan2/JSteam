@@ -72,4 +72,18 @@ public class DatabaseConfiguration {
         return index;
     }
 
+    public static int findIndexGameByName(String gameName){
+        int index = -1;
+
+        for (int i = 0 ; i < DatabaseConfiguration.games.size() ; i++){
+            if(DatabaseConfiguration.games.get(i).getName().equals(gameName)){
+                index = i;
+                break;
+            }
+            else index = -1;
+        }
+
+        return index;
+    }
+
 }
